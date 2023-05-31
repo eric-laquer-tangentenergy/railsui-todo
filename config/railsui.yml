@@ -1,0 +1,7 @@
+--- !ruby/object:Railsui::Configuration
+application_name: RailsUI_Retriever_2c
+css_framework: bootstrap
+support_email: support@example.com
+theme: retriever
+pages:
+- pricing

@@ -1,0 +1,24 @@
+<div class="container mt-5">
+  <div class="row justify-content-between mb-3">
+    <div class="col">
+      <h1>Task #<%= @task.id %></h1>
+    </div>
+    <div class="col text-end">
+      <%= link_to "New Task", new_task_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><%= link_to "Tasks", tasks_path %></li>
+      <li class="breadcrumb-item active">Task #<%= @task.id %></li>
+    </ol>
+  </nav>
+
+  <%= render @task %>
+
+  <div class="d-flex justify-content-start align-items-center">
+    <%= link_to "Edit", edit_task_path(@task), class: "btn btn-primary me-3" %>
+
+    <%= button_to "Delete", @task, method: :delete, class: "btn btn-outline-danger", form: { data: { turbo_confirm: "Are you sure?" } } %>
+  </div>
+</div>
